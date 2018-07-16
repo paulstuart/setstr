@@ -1,0 +1,26 @@
+syntax = "proto3";
+package pb;
+import "common.proto";
+
+enum SequenceTopic {
+    sequence_V1 = 0;
+}
+
+message SequenceRequest {
+    string key = 1;
+    int64 quantity = 2;
+}
+
+message SequenceCore {
+    string key = 1;
+    int64 quantity = 2;
+    repeated string sequences = 3;
+}
+
+message SequenceResponse {
+    Error error = 1;
+    string key = 2;
+    int64 quantity = 3;
+    repeated string sequences = 4;
+}
+
